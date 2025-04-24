@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  xlsx-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: xlsx-minimum-service
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./uploads:/uploads  # если хочешь подключать локальные файлы
+    environment:
+      - JAVA_OPTS=
